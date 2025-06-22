@@ -13,10 +13,10 @@ import timm
 
 # CONFIGURATION
 CONFIG = {
-    "model_name": "TransUNet",
+    "model_name": "ViT",
     "backbone": "vit_base_patch16_224",
     "batch_size": 32,
-    "epochs": 150,
+    "epochs": 250,
     "lr": 1e-4,
     "input_size": (224, 224),
     "loss_fn": "L1Loss", 
@@ -77,7 +77,7 @@ train_loader = DataLoader(train_dataset, batch_size=CONFIG["batch_size"], shuffl
 val_loader = DataLoader(val_dataset, batch_size=CONFIG["batch_size"], shuffle=False)
 
 #MODEL
-class TransUNet(nn.Module):
+class ViT(nn.Module):
     def __init__(self, model_name="vit_base_patch16_224", pretrained=True):
         super().__init__()
         self.encoder = timm.create_model(model_name, pretrained=pretrained)
@@ -106,7 +106,7 @@ class TransUNet(nn.Module):
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = TransUNet(CONFIG["backbone"]).to(device)
+model = ViT(CONFIG["backbone"]).to(device)
 criterion = nn.L1Loss()
 optimizer = optim.Adam(model.parameters(), lr=CONFIG["lr"])
 scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=10, verbose=True)
