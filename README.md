@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ### Dataset Set-up
 
 The models are trained and tested using the **JHU-Crowd++** dataset from Kaggle. To proceed with the execution, first install the complete dataset from the link and execute the pre-processing data file in `heatmaps/data_preprocessing.py`.
-This is requiered since the dataset does not provide the heatmaps requiered for training and testing directly.
+This is necessary since the dataset does not provide the heatmaps required for training and testing directly.
 
 
 - **Kaggle link for download:** https://www.kaggle.com/datasets/hoangxuanviet/jhu-crowd/data  
