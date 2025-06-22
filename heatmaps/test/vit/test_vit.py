@@ -78,7 +78,7 @@ class JHU_CrowdPP_TestDataset(Dataset):
 
         return original_image_tensor_for_display, image_for_model, heatmap_tensor, img_path 
 
-class TransUNet(nn.Module):
+class ViT(nn.Module):
     def __init__(self, model_name="vit_base_patch16_224", pretrained=True, input_size=(224, 224)):
         super().__init__()
         self.encoder = timm.create_model(model_name, pretrained=pretrained)
@@ -361,7 +361,7 @@ if __name__ == "__main__":
         print(f"Saving visualizations and model CSV to: {model_output_dir}")
 
         try:
-            model = TransUNet(model_name="vit_base_patch16_224", pretrained=False, input_size=MODEL_INPUT_SIZE)
+            model = ViT(model_name="vit_base_patch16_224", pretrained=False, input_size=MODEL_INPUT_SIZE)
             model.load_state_dict(torch.load(model_path, map_location=DEVICE))
             print(f"Model weights loaded successfully from: {model_path}")
 
