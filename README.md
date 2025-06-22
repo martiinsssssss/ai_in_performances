@@ -18,6 +18,14 @@ pip install -r requirements.txt
 ```
 
 ### Dataset Set-up
+
+The models are trained and tested using the **JHU-Crowd++** dataset from Kaggle. To proceed with the execution, first install teh complete dataset from the link and execute the pre-processing data file in data/heatmap_generation.py.
+This is requiered since the dataset does not provide the heatmaps requiered for training and testing directly.
+
+- **Direct link for download:** https://www.kaggle.com/datasets/hoangxuanviet/jhu-crowd/data  
+
+This is requiered since the dataset does not provide the heatmaps directly.
+
 ### TouchDesigner Set-up
 ### Training
 ### Model Results
