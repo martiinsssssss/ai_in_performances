@@ -287,33 +287,33 @@ if __name__ == "__main__":
     MODEL_INPUT_SIZE = (224, 224)
 
     MODEL_CONFIGS = {
-        'TransUNet_L1Loss_Model': {
+        'ViT_L1Loss_Model': {
             'path': 'outputs/ViT/L1/model_l1.pth',
             'loss_type': 'l1',
             'base_visualizations_path': 'model_test/ViT/visualizations' 
         },
-        'TransUNet_MSELoss_Model': {
+        'ViT_MSELoss_Model': {
             'path': 'outputs/ViT/MSE/model_mse.pth',
             'loss_type': 'mse',
             'base_visualizations_path': 'model_test/ViT/visualizations'
         },
         
-        'TransUNet_BCEWithLogitsLoss_Model': {
+        'ViT_BCEWithLogitsLoss_Model': {
             'path': 'outputs/ViT/BCE/model_bcelogits.pth',
             'loss_type': 'bcewithlogits',
             'base_visualizations_path': 'model_test/ViT/visualizations'
         },
-        'TransUNet_BCE_Model_2': { 
+        'ViT_BCE_Model_2': { 
             'path': 'outputs/ViT/BCE2/model_bcelogits2.pth',
             'loss_type': 'bcewithlogits',
             'base_visualizations_path': 'model_test/ViT/visualizations'
         },
-        'TransUNet_L1Loss_Model2': {
+        'ViT_L1Loss_Model2': {
             'path': 'outputs/ViT/L12/model_l12.pth',
             'loss_type': 'l1',
             'base_visualizations_path': 'model_test/ViT/visualizations' 
         },
-        'TransUNet_MSELoss_Model': {
+        'ViT_MSELoss_Model': {
             'path': 'outputs/ViT/MSE2/model_mse2.pth',
             'loss_type': 'mse',
             'base_visualizations_path': 'model_test/ViT/visualizations' 
