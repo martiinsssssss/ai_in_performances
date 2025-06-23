@@ -7,7 +7,7 @@ from tqdm import tqdm
 from torchvision import transforms
 import pandas as pd
 import torch.nn as nn
-import timm # Required for the TransUNet model's backbone
+import timm # Required for the ViT model's backbone
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D 
 import json
@@ -270,7 +270,7 @@ def save_metrics_plot(metrics_df, output_plot_path):
     ax.set_xlabel('Model Name', fontsize=12, weight='bold')
     ax.set_ylabel('')
     ax.set_zlabel('Heatmap MAE', fontsize=12, weight='bold')
-    ax.set_title('3D Heatmap MAE Comparison Across TransUNet Models', fontsize=16, weight='bold')
+    ax.set_title('3D Heatmap MAE Comparison Across ViT Models', fontsize=16, weight='bold')
 
     ax.view_init(elev=20, azim=-45)
 
@@ -393,13 +393,13 @@ if __name__ == "__main__":
     print(overall_metrics_df)
 
     overall_run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_OverallRun")
-    overall_results_base_dir = os.path.join('model_test', 'TransUNet', 'overall_results', overall_run_timestamp)
+    overall_results_base_dir = os.path.join('model_test', 'ViT', 'overall_results', overall_run_timestamp)
     os.makedirs(overall_results_base_dir, exist_ok=True)
-    overall_csv_path = os.path.join(overall_results_base_dir, 'transunet_all_models_heatmap_evaluation_metrics.csv')
+    overall_csv_path = os.path.join(overall_results_base_dir, 'vit_all_models_heatmap_evaluation_metrics.csv')
     overall_metrics_df.to_csv(overall_csv_path, index=False)
     print(f"\nOverall heatmap evaluation metrics for this run saved to {overall_csv_path}")
 
-    overall_plot_filename = os.path.join(overall_results_base_dir, 'transunet_all_models_mae_3d_bar_chart.png')
+    overall_plot_filename = os.path.join(overall_results_base_dir, 'vit_all_models_mae_3d_bar_chart.png')
     
     if not overall_metrics_df.empty:
         save_metrics_plot(overall_metrics_df, overall_plot_filename)
