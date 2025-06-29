@@ -17,6 +17,7 @@ Install all the dependencies defined in the `requirements.txt` file
 pip install -r requirements.txt
 ```
 ## Heatmaps
+![System's Pipeline](assets/blender_pipeline.png "System's Pipeline")
 ### Dataset Set-up
 
 The models are trained and tested using the **JHU-Crowd++** dataset from Kaggle. To proceed with the execution, first install the complete dataset from the link and execute the pre-processing data file in `heatmaps/data_preprocessing.py`.
