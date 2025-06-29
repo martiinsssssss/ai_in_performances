@@ -34,10 +34,15 @@ To perform the rendering the installation of Blender is required.
 IMAGEN LOGO BLENDER
 
 ### Training
-The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. A link to the trained models can be found in the folder `models/`. The images above show some of the results obtained by my trained models.
-![UNet MSE training results](assets/training_mse_unet.png "UNet MSE training results")
+The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. A link to the trained models can be found in the folder `models/`. The images above show the results obtained for the UNet BCE with Logits model.
+![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
 ### Inference Results
-
+For this same model, here are the obtained results with an image in the context of a concert:
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="stand.jpg" alt="Original image" style="width: 30%;">
+  <img src="ruta/a/imagen2.png" alt="Overlaye Heatmap" style="width: 30%;">
+  <img src="ruta/a/imagen3.png" alt="Greyscale Heatmap" style="width: 30%;">
+</div>
 ## Music
 ### Environment Set-up
 ### Dataset Set-up
