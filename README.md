@@ -35,15 +35,9 @@ IMAGEN LOGO BLENDER
 
 ### Training
 The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. A link to the trained models can be found in the folder `models/`. The images above show some of the results obtained by my trained models.
-PONER FOTOS EJEMPLO TRAINING
+![UNet MSE training results](assets/training_mse_unet.png "UNet MSE training results")
 ### Inference Results
-PONER FOTOS EJEMPLO IMAGEN ORIGINAL, HEATMAP, GREYSCALE Y INFERENCIA
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="ruta/a/imagen1.png" alt="Imagen 1" style="width: 30%;">
-  <img src="ruta/a/imagen2.png" alt="Imagen 2" style="width: 30%;">
-  <img src="ruta/a/imagen3.png" alt="Imagen 3" style="width: 30%;">
-  <img src="ruta/a/imagen3.png" alt="Imagen 3" style="width: 30%;">
-</div>
+
 ## Music
 ### Environment Set-up
 ### Dataset Set-up
