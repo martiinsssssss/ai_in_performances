@@ -1,8 +1,6 @@
 # Interactive Performances: Real-Time AI Systems Shaping Audience and Artist Experiences
 In this git you will find all the source code for my Degree's Final Project related with the use of AI systems in live performances for enhancing artist and audience experience.
 
-## Introduction
-
 ## Environment Set-up
 Before creating the environment ensure that you have python installed in your device, this environment was created using python 3.8.10.
 
@@ -36,13 +34,29 @@ IMAGEN LOGO BLENDER
 ### Training
 The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. A link to the trained models can be found in the folder `models/`. The images above show the results obtained for the UNet BCE with Logits model.
 ![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
+
 ### Inference Results
-For this same model, here are the obtained results with an image in the context of a concert:
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="stand.jpg" alt="Original image" style="width: 30%;">
-  <img src="ruta/a/imagen2.png" alt="Overlaye Heatmap" style="width: 30%;">
-  <img src="ruta/a/imagen3.png" alt="Greyscale Heatmap" style="width: 30%;">
-</div>
+For this same model, here are the obtained results with an image in the context of a concert. The image represent the **Original Image**, the **Overlayed Heatmap**, the **Greyscale Heatmap**, a **3D plotting** for preview and the resulting **Rwnder** with Blender.
+<table style="width:100%; border: none;">
+  <tr>
+    <td style="border: none; text-align:center;">
+      <img src="assets/stand.jpg" alt="Original image" width="180">
+    </td>
+    <td style="border: none; text-align:center;">
+      <img src="assets/heatmap_overlay_unet_bce.png" alt="Overlayed Heatmap" width="180">
+    </td>
+    <td style="border: none; text-align:center;">
+      <img src="assets/heatmap_pure_grayscale_unet_bce.png" alt="Greyscale Heatmap" width="180">
+    </td>
+    <td style="border: none; text-align:center;">
+      <img src="assets/3d_rotation_unet_bce.gif" alt="Preview" width="180">
+    </td>
+    <td style="border: none; text-align:center;">
+      <img src="assets/stand_render.png" alt="Render" width="200">
+    </td>
+  </tr>
+</table>
+
 ## Music
 ### Environment Set-up
 ### Dataset Set-up
