@@ -15,7 +15,10 @@ Install all the dependencies defined in the `requirements.txt` file
 pip install -r requirements.txt
 ```
 ## Heatmaps
-![System's Pipeline](assets/blender_pipeline.png "System's Pipeline")
+<div align="center">
+  <img src="assets/blender_pipeline.png" alt="System's Pipeline" width="700">
+</div>
+
 ### Dataset Set-up
 
 The models are trained and tested using the **JHU-Crowd++** dataset from Kaggle. To proceed with the execution, first install the complete dataset from the link and execute the pre-processing data file in `heatmaps/data_preprocessing.py`.
@@ -29,14 +32,14 @@ This is necessary since the dataset does not provide the heatmaps required for t
 ### Blender Set-up 
 To perform the rendering the installation of Blender is required. 
 - Follow this link to download the latest version: https://www.blender.org/
-IMAGEN LOGO BLENDER
+
 
 ### Training
-The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. A link to the trained models can be found in the folder `models/`. The images above show the results obtained for the UNet BCE with Logits model.
+The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. A link to the trained models can be found in the folder `models/`. The images above show the results obtained for the UNet BCE with Logits model. <br><br>
 ![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
 
 ### Inference Results
-For this same model, here are the obtained results with an image in the context of a concert. The image represent the **Original Image**, the **Overlayed Heatmap**, the **Greyscale Heatmap**, a **3D plotting** for preview and the resulting **Rwnder** with Blender.
+For this same model, here are the obtained results with an image in the context of a concert. The image represent the **Original Image**, the **Overlayed Heatmap**, the **Greyscale Heatmap**, a **3D plotting** for preview and the resulting **Render** with Blender.
 <table style="width:100%; border: none;">
   <tr>
     <td style="border: none; text-align:center;">
@@ -57,10 +60,26 @@ For this same model, here are the obtained results with an image in the context 
   </tr>
 </table>
 
+To obtain the greyscale image and the 3D plot you must run the code in `render/model_name`. To get the render with the textures you need to open the `render/montaña_render.blend` file and load **manually** the greyscale image in the **Material** section in the right panel. 
+
 ## Music
-### Environment Set-up
-### Dataset Set-up
+<div align="center">
+  <img src="assets/touchdesigner_pipeline.png" alt="System's Pipeline" width="700">
+</div>
+
 ### TouchDesigner Set-up
-### Training
-### Model Results
-### Inference Results
+To use the software the installation of TouchDesigner is required. 
+- Follow this link to download the latest version: https://derivative.ca/download
+
+### Software Set-up
+To start using the system, you need to open the file `music/note_tracker.72.toe` and play it. Once this is done, you need to run locally the `music/hand_tracker.py` for MediaPipe to start tracking your hand movement.
+
+Here is a preview of the interface: <br><br>
+<div align="center">
+  <img src="assets/touchdesigner_interaction.png" alt="TouchDesigner Interaction" width="200">
+</div>
+
+For testing, just run the `music/mediapipe_test.py` file, setting the desired time for the duration of the session, and once you have performed all the tests you can analyze the results by running `music/analyze_results.py` 
+
+
+
