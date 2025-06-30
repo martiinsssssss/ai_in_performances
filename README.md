@@ -65,7 +65,24 @@ For this same model, here are the obtained results with an image in the context 
 
 To obtain the greyscale image and the 3D plot you must run the code in `render/model_name`. To get the render with the textures you need to open the `render/montaña_render.blend` file and load **manually** the greyscale image in the **Material** section in the right panel. 
 <br><br>
-If you want to automatize the process,
+If you want to automatize the process, inside `heatmaps\auto\` you will find all the necessary files. By running `generate.py` the model you have selected will generate the heatmap and automatically connect with the .blend file.
+For a more clear organization create a new folder for the project this is an overview on how should it look:
+```
+── 📁 pycache/
+├── 📁 heatmaps/
+├── 📄 model_xxx.pth #Model weights
+├── 🖼️ stand.jpg #Original image
+├── ⛰️ montaña_render.blend
+├── 🐍 blender_update_displacement.py
+├── 🐍 generate.py
+├── 🐍 model_cnn.py
+├── 🐍 model_unet.py
+├── 🐍 model_vit.py
+└── 🐍 utils.py
+```
+
+> ⚠️ **Note:** Please check all the paths to yout files before running.
+
 
 
 ## Music
