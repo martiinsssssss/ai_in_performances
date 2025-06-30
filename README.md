@@ -39,7 +39,8 @@ The trainig scripts for each model can be found in the `train/` folder. Any hype
 > ⚠️ **The UNet and ViT models can be downloaded from the link in each folder**.
 <br><br>
 ![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
-This images show the results obtained for the UNet BCE with Logits model. 
+This images show the results obtained for the UNet BCE with Logits model.
+
 ### Inference Results
 For this same model, here are the obtained results with an image in the context of a concert. The image represent the **Original Image**, the **Overlayed Heatmap**, the **Greyscale Heatmap**, a **3D plotting** for preview and the resulting **Render** with Blender.
 <table style="width:100%; border: none;">
@@ -63,6 +64,9 @@ For this same model, here are the obtained results with an image in the context 
 </table>
 
 To obtain the greyscale image and the 3D plot you must run the code in `render/model_name`. To get the render with the textures you need to open the `render/montaña_render.blend` file and load **manually** the greyscale image in the **Material** section in the right panel. 
+<br><br>
+If you want to automatize the process,
+
 
 ## Music
 <div align="center">
