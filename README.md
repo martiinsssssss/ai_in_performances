@@ -1,48 +1,83 @@
 # Interactive Performances: Real-Time AI Systems Shaping Audience and Artist Experiences
-In this git you will find all the source code for my Degree's Final Project related with the use of AI systems in live performances for enhancing artist and audience experience.
 
-## Environment Set-up
-Before creating the environment ensure that you have python installed in your device, this environment was created using python 3.8.10.
+In this repository, you'll find all the source code for my Degree's Final Project, focused on using real-time AI systems to enhance live performances from both the artist’s and the audience’s perspectives.
 
-#### 1. Creation/activation of the environment
-First, create a new `heat_env` environment and activate it before installing the dependencies 
+---
+
+## 🧪 Environment Set-up
+
+Make sure Python is installed on your machine. This project was developed using **Python 3.8.10**.
+
+### 1. Create and Activate the Virtual Environment
+
 ```bash
 python3.8 -m venv tfg_env
+source tfg_env/bin/activate  # On Windows: tfg_env\Scripts\activate
 ```
-#### 2. Dependencies installation 
-Install all the dependencies defined in the `requirements.txt` file
+
+### 2. Install Dependencies
+
+Install all necessary packages from the `requirements.txt` file:
+
 ```bash
 pip install -r requirements.txt
 ```
-## Heatmaps
+
+---
+
+## 🔥 Heatmaps Module
+
 <div align="center">
   <img src="assets/blender_pipeline.png" alt="System's Pipeline" width="700">
 </div>
 
-### Dataset Set-up
+### 📂 Dataset Set-up
 
-The models are trained and tested using the **JHU-Crowd++** dataset from Kaggle. To proceed with the execution, first install the complete dataset from the link and execute the pre-processing data file in `heatmaps/data_preprocessing.py`.
-This is necessary since the dataset does not provide the heatmaps required for training and testing directly.
+This project uses the **JHU-Crowd++** dataset from Kaggle.
 
+1. Download the dataset from:  
+   https://www.kaggle.com/datasets/hoangxuanviet/jhu-crowd/data  
+2. Run the preprocessing script:  
+   `heatmaps/data_preprocessing.py`
 
-- **Kaggle link for download:** https://www.kaggle.com/datasets/hoangxuanviet/jhu-crowd/data  
+This step generates the required heatmaps since they're not included in the original dataset.
 
-> **⚠️ Note:** Ensure that the paths in the `data_preprocessing.py` file are correct before executing.
+> ⚠️ **Important:** Make sure to configure the correct input/output paths in `data_preprocessing.py`.
 
-### Blender Set-up 
-To perform the rendering the installation of Blender is required. 
-- Follow this link to download the latest version: https://www.blender.org/
+---
 
+### 🛠️ Blender Set-up
 
-### Training
-The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. The CNN trained models can be found in the folder `models/cnn`. 
-> ⚠️ **The UNet and ViT models can be downloaded from the link in each folder**.
-<br><br>
-![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
-This images show the results obtained for the UNet BCE with Logits model.
+Rendering is handled via Blender. Download the latest version here:  
+https://www.blender.org/
 
-### Inference Results
-For this same model, here are the obtained results with an image in the context of a concert. The image represent the **Original Image**, the **Overlayed Heatmap**, the **Greyscale Heatmap**, a **3D plotting** for preview and the resulting **Render** with Blender.
+---
+
+### 🧠 Model Training
+
+- Training scripts are located in the `train/` directory.
+- Hyperparameters can be edited at the top of each script.
+- CNN-trained models are saved in `models/cnn/`.
+- **UNet** and **ViT** weights must be downloaded from their respective subfolders.
+
+> ⚠️ **Note:** Some model files may include download links; ensure they're placed correctly before running.
+
+<br>
+
+![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")  
+*UNet model results using BCE with Logits Loss.*
+
+---
+
+### 🖼️ Inference & Visualization
+
+Below is an example using a concert image. From left to right:
+- **Original Image**
+- **Overlayed Heatmap**
+- **Grayscale Heatmap**
+- **3D Plot**
+- **Blender Render**
+
 <table style="width:100%; border: none;">
   <tr>
     <td style="border: none; text-align:center;">
@@ -52,10 +87,10 @@ For this same model, here are the obtained results with an image in the context 
       <img src="assets/heatmap_overlay_unet_bce.png" alt="Overlayed Heatmap" width="180">
     </td>
     <td style="border: none; text-align:center;">
-      <img src="assets/heatmap_pure_grayscale_unet_bce.png" alt="Greyscale Heatmap" width="180">
+      <img src="assets/heatmap_pure_grayscale_unet_bce.png" alt="Grayscale Heatmap" width="180">
     </td>
     <td style="border: none; text-align:center;">
-      <img src="assets/3d_rotation_unet_bce.gif" alt="Preview" width="180">
+      <img src="assets/3d_rotation_unet_bce.gif" alt="3D Plot" width="180">
     </td>
     <td style="border: none; text-align:center;">
       <img src="assets/stand_render.png" alt="Render" width="200">
@@ -63,45 +98,87 @@ For this same model, here are the obtained results with an image in the context 
   </tr>
 </table>
 
-To obtain the greyscale image and the 3D plot you must run the code in `render/model_name`. To get the render with the textures you need to open the `render/montaña_render.blend` file and load **manually** the greyscale image in the **Material** section in the right panel. 
-<br><br>
-If you want to automatize the process, inside `heatmaps\auto\` you will find all the necessary files. By running `generate.py` the model you have selected will generate the heatmap and automatically connect with the .blend file.
-For a more clear organization create a new folder for the project this is an overview on how should it look:
+#### Manual Rendering (Basic)
+
+To produce the render manually:
+1. Generate the grayscale heatmap and 3D plot from `render/model_name/`.
+2. Open `render/montaña_render.blend` in Blender.
+3. Load the grayscale heatmap manually in the **Material Properties** panel.
+
+---
+
+### ⚙️ Automated Pipeline
+
+Inside the `heatmaps/auto/` directory, you'll find an automated version of the rendering pipeline.
+
+Just run:
+
+```bash
+python generate.py
 ```
-├── 📁 heatmaps/
-├── 📄 model_xxx.pth #Model weights
-├── 🖼️ stand.jpg #Original image
-├── ⛰️ montaña_render.blend
-├── 🐍 blender_update_displacement.py
-├── 🐍 generate.py
-├── 🐍 model_cnn.py
-├── 🐍 model_unet.py
-├── 🐍 model_vit.py
-└── 🐍 utils.py
+
+The script:
+- Loads the model of your choice
+- Generates the heatmap
+- Automatically connects it to the `.blend` file
+
+#### Recommended Folder Structure:
+
+```
+├── heatmaps/
+├── model_xxx.pth                # Model weights
+├── stand.jpg                    # Input image
+├── montaña_render.blend         # Blender project
+├── blender_update_displacement.py
+├── generate.py
+├── model_cnn.py
+├── model_unet.py
+├── model_vit.py
+└── utils.py
 ```
 
-> ⚠️ **Note:** Please check all the paths to yout files before running.
+> ⚠️ **Reminder:** Double-check all file paths before execution.
 
+---
 
+## 🎵 Music Interaction Module
 
-## Music
 <div align="center">
   <img src="assets/touchdesigner_pipeline.png" alt="System's Pipeline" width="700">
 </div>
 
-### TouchDesigner Set-up
-To use the software the installation of TouchDesigner is required. 
-- Follow this link to download the latest version: https://derivative.ca/download
+### 🧩 TouchDesigner Set-up
 
-### Software Set-up
-To start using the system, you need to open the file `music/note_tracker.72.toe` in TouchDesigner and click play. Once this is done, you need to run locally the `music/hand_tracker.py` file for MediaPipe to start tracking your hand movement.
+This module uses **TouchDesigner** for real-time audio-visual feedback.  
+Download it here:  
+https://derivative.ca/download
 
-Here is a preview of the interface: <br><br>
+---
+
+### 🖐️ Software Execution
+
+1. Open `music/note_tracker.72.toe` in TouchDesigner and press **Play**.
+2. Run `music/hand_tracker.py` to activate real-time hand tracking using MediaPipe.
+
+<br>
+
+#### Live Interface Preview:
 <div align="center">
   <img src="assets/touchdesigner_interaction.png" alt="TouchDesigner Interaction" width="200">
 </div>
 
-For testing, just run the `music/mediapipe_test.py` file, setting the desired time for the duration of the session, and once you have performed all the tests you can analyze the results by running `music/analyze_results.py`.
+---
 
+### 🧪 Testing and Analysis
 
+- For standalone testing, run:
+  ```bash
+  python music/mediapipe_test.py
+  ```
+  Set the duration of the session as needed.
 
+- After testing, run:
+  ```bash
+  python music/analyze_results.py
+  ```
+  This will help analyze captured gesture data and system response.
