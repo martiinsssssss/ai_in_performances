@@ -35,7 +35,7 @@ To perform the rendering the installation of Blender is required.
 
 
 ### Training
-The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. A link to the trained models can be found in the folder `models/`. The images above show the results obtained for the UNet BCE with Logits model. <br><br>
+The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. The CNN trained models can be found in the folder `models/cnn`. ⚠️ **The UNet and ViT models can be downloaded from the link in each folder** The images above show the results obtained for the UNet BCE with Logits model. <br><br>
 ![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
 
 ### Inference Results
