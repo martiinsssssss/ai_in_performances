@@ -37,10 +37,9 @@ To perform the rendering the installation of Blender is required.
 ### Training
 The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. The CNN trained models can be found in the folder `models/cnn`. 
 > ⚠️ **The UNet and ViT models can be downloaded from the link in each folder**.
-
-The images above show the results obtained for the UNet BCE with Logits model. <br><br>
+<br><br>
 ![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
-
+This images show the results obtained for the UNet BCE with Logits model. 
 ### Inference Results
 For this same model, here are the obtained results with an image in the context of a concert. The image represent the **Original Image**, the **Overlayed Heatmap**, the **Greyscale Heatmap**, a **3D plotting** for preview and the resulting **Render** with Blender.
 <table style="width:100%; border: none;">
