@@ -68,7 +68,6 @@ To obtain the greyscale image and the 3D plot you must run the code in `render/m
 If you want to automatize the process, inside `heatmaps\auto\` you will find all the necessary files. By running `generate.py` the model you have selected will generate the heatmap and automatically connect with the .blend file.
 For a more clear organization create a new folder for the project this is an overview on how should it look:
 ```
-── 📁 pycache/
 ├── 📁 heatmaps/
 ├── 📄 model_xxx.pth #Model weights
 ├── 🖼️ stand.jpg #Original image
