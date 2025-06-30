@@ -35,7 +35,10 @@ To perform the rendering the installation of Blender is required.
 
 
 ### Training
-The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. The CNN trained models can be found in the folder `models/cnn`. ⚠️ **The UNet and ViT models can be downloaded from the link in each folder** The images above show the results obtained for the UNet BCE with Logits model. <br><br>
+The trainig scripts for each model can be found in the `train/` folder. Any hyperparameter specification can be defined in the upper section of the script. The CNN trained models can be found in the folder `models/cnn`. 
+> ⚠️ **The UNet and ViT models can be downloaded from the link in each folder**.
+
+The images above show the results obtained for the UNet BCE with Logits model. <br><br>
 ![UNet BCE with Logits training results](assets/training_bce_unet.png "UNet BCE with Logits training results")
 
 ### Inference Results
@@ -72,14 +75,14 @@ To use the software the installation of TouchDesigner is required.
 - Follow this link to download the latest version: https://derivative.ca/download
 
 ### Software Set-up
-To start using the system, you need to open the file `music/note_tracker.72.toe` and play it. Once this is done, you need to run locally the `music/hand_tracker.py` for MediaPipe to start tracking your hand movement.
+To start using the system, you need to open the file `music/note_tracker.72.toe` in TouchDesigner and click play. Once this is done, you need to run locally the `music/hand_tracker.py` file for MediaPipe to start tracking your hand movement.
 
 Here is a preview of the interface: <br><br>
 <div align="center">
   <img src="assets/touchdesigner_interaction.png" alt="TouchDesigner Interaction" width="200">
 </div>
 
-For testing, just run the `music/mediapipe_test.py` file, setting the desired time for the duration of the session, and once you have performed all the tests you can analyze the results by running `music/analyze_results.py` 
+For testing, just run the `music/mediapipe_test.py` file, setting the desired time for the duration of the session, and once you have performed all the tests you can analyze the results by running `music/analyze_results.py`.
 
 
 
