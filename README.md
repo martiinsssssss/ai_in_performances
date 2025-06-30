@@ -125,16 +125,16 @@ The script:
 #### Recommended Folder Structure:
 
 ```
-├── heatmaps/
-├── model_xxx.pth                # Model weights
-├── stand.jpg                    # Input image
-├── montaña_render.blend         # Blender project
-├── blender_update_displacement.py
-├── generate.py
-├── model_cnn.py
-├── model_unet.py
-├── model_vit.py
-└── utils.py
+├── 📁 heatmaps/
+├── 📄 model_xxx.pth      # Model weights
+├── 🖼️ stand.jpg          # Original image
+├── ⛰️ montaña_render.blend
+├── 🐍 blender_update_displacement.py
+├── 🐍 generate.py
+├── 🐍 model_cnn.py
+├── 🐍 model_unet.py
+├── 🐍 model_vit.py
+└── 🧰 utils.py
 ```
 
 > ⚠️ **Reminder:** Double-check all file paths before execution.
