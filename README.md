@@ -139,6 +139,10 @@ The script:
 
 > ⚠️ **Reminder:** Double-check all file paths before execution.
 
+<div align="center">
+  <img src="assets/render.gif" alt="Render 3D View" width="700">
+</div>
+
 ---
 
 ## 🎵 Music Interaction Module
