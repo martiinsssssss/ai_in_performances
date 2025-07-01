@@ -182,3 +182,6 @@ https://derivative.ca/download
   python music/analyze_results.py
   ```
   This will help analyze captured gesture data and system response.
+
+## Acknowledgements
+I would like to thank David Hernández for his feedback on the development of the DJ-Music interaction software, in the context of the project Beyond Collapse. This work has been developed with the support of the Càtedra UAB-Cruïlla, Chair on Research and Artificial Intelligence in the field of Music/Arts (TSI-100929-2023-2).
