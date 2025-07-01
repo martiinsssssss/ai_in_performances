@@ -183,5 +183,16 @@ https://derivative.ca/download
   ```
   This will help analyze captured gesture data and system response.
 
+## References
+
+- Sindagi, V.A., Yasarla, R., Patel, V.M. (2019). *Pushing the frontiers of unconstrained crowd counting: New dataset and benchmark method*. Proceedings of ICCV.  
+- Sindagi, V.A., Yasarla, R., Patel, V.M. (2020). *JHU-CROWD++: Large-Scale Crowd Counting Dataset and A Benchmark Method*. Technical Report.
+
+- Blender Foundation. *Blender: Free and Open Source 3D Creation Suite*. https://www.blender.org/
+
+- Derivative. *TouchDesigner User Guide*. https://derivative.ca/UserGuide/TouchDesigner
+
+- Google. *MediaPipe Pose*. https://developers.google.com/mediapipe/solutions/vision/pose
+
 ## Acknowledgements
 I would like to thank David Hernández for his feedback on the development of the DJ-Music interaction software, in the context of the project Beyond Collapse. This work has been developed with the support of the Càtedra UAB-Cruïlla, Chair on Research and Artificial Intelligence in the field of Music/Arts (TSI-100929-2023-2).
